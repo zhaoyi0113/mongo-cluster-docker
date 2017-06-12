@@ -2,7 +2,7 @@ version: '2'
 services:
     mongo-router:
         container_name: "mongo-router"
-        image: mongo
+        image: ${MONGO_IMAGE}
         ports:
             - "30031:27017"
         depends_on:
@@ -24,7 +24,7 @@ services:
 
     mongo-shard-setup:
         container_name: "mongo-shard-setup"
-        image: mongo
+        image: ${MONGO_IMAGE}
         depends_on:
             - "mongo-router"
         links:

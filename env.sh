@@ -1,0 +1,1 @@
+MONGO_IMAGE=mongo:3.4.4
