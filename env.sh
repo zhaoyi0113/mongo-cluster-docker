@@ -1,1 +1,1 @@
-MONGO_IMAGE=mongo:3.4.4
+export MONGO_IMAGE=mongo:3.4.4
