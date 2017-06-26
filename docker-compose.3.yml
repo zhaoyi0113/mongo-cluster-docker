@@ -7,7 +7,7 @@ services:
             - ./mongo-3-2:/data/db
         ports:
             - "30022:27017"
-        command: mongod --replSet rs2 --shardsvr --port 27017 --nojournal --oplogSize 16 --noprealloc --smallfiles
+        command: mongod --replSet rs3 --shardsvr --port 27017 --nojournal --oplogSize 16 --noprealloc --smallfiles
         restart: always
 
     mongo-3-3:
@@ -17,7 +17,7 @@ services:
             - ./mongo-3-3:/data/db
         ports:
             - "30033:27017"
-        command: mongod --replSet rs2 --shardsvr --port 27017 --nojournal --oplogSize 16 --noprealloc --smallfiles
+        command: mongod --replSet rs3 --shardsvr --port 27017 --nojournal --oplogSize 16 --noprealloc --smallfiles
         restart: always 
 
     mongo-3-1:
@@ -27,7 +27,7 @@ services:
             - ./mongo-3-1:/data/db
         ports:
             - "30031:27017"
-        command: mongod --replSet rs2 --shardsvr --port 27017 --nojournal --oplogSize 16 --noprealloc --smallfiles
+        command: mongod --replSet rs3 --shardsvr --port 27017 --nojournal --oplogSize 16 --noprealloc --smallfiles
         links:
             - mongo-3-2:mongo-3-2
             - mongo-3-3:mongo-3-3
