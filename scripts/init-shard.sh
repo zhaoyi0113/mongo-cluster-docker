@@ -10,6 +10,10 @@ mongodb21=`ping -c 1 ${MONGO21} | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
 mongodb22=`ping -c 1 ${MONGO22} | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
 mongodb23=`ping -c 1 ${MONGO23} | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
 
+mongodb31=`ping -c 1 ${MONGO31} | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
+mongodb32=`ping -c 1 ${MONGO32} | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
+mongodb33=`ping -c 1 ${MONGO33} | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
+
 port=${PORT:-27017}
 
 echo "Waiting for startup.."
@@ -24,5 +28,6 @@ echo init-shard.sh time now: `date +"%T" `
 mongo --host ${mongodb1}:${port} <<EOF
    sh.addShard( "${RS1}/${mongodb11}:${PORT1},${mongodb12}:${PORT2},${mongodb13}:${PORT3}" );
    sh.addShard( "${RS2}/${mongodb21}:${PORT1},${mongodb22}:${PORT2},${mongodb23}:${PORT3}" );
+   sh.addShard( "${RS3}/${mongodb31}:${PORT1},${mongodb32}:${PORT2},${mongodb33}:${PORT3}" );
    sh.status();
 EOF

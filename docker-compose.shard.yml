@@ -8,6 +8,7 @@ services:
         depends_on:
             - "mongo-rs1-setup"
             - "mongo-rs2-setup"
+            - "mongo-rs3-setup"
             - "mongo-cnf-setup"
         links:
             - mongo-cnf-1:mongo-cnf-1
@@ -19,6 +20,9 @@ services:
             - mongo-2-1:mongo-2-1
             - mongo-2-2:mongo-2-2
             - mongo-2-3:mongo-2-3
+            - mongo-3-1:mongo-3-1
+            - mongo-3-2:mongo-3-2
+            - mongo-3-3:mongo-3-3
         command: mongos --configdb cnf-serv/mongo-cnf-1:27017,mongo-cnf-2:27017,mongo-cnf-3:27017
         restart: always
 
@@ -39,8 +43,12 @@ services:
             - MONGO21=mongo-2-1
             - MONGO22=mongo-2-2
             - MONGO23=mongo-2-3
+            - MONGO31=mongo-3-1
+            - MONGO32=mongo-3-2
+            - MONGO33=mongo-3-3
             - RS1=rs1
             - RS2=rs2
+            - RS3=rs3
             - PORT=27017
             - PORT1=27017
             - PORT2=27017
