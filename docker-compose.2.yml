@@ -8,11 +8,13 @@ services:
         ports:
             - "30042:27017"
         command: mongod --replSet rs2 --shardsvr --port 27017 --nojournal --oplogSize 16 --noprealloc --smallfiles
+        mem_limit: 512m
         restart: always
 
     mongo-2-3:
         container_name: "mongo-2-3"
         image: ${MONGO_IMAGE}
+        mem_limit: 512m
         volumes: 
             - ./mongo-2-3:/data/db
         ports:
@@ -23,6 +25,7 @@ services:
     mongo-2-1:
         container_name: "mongo-2-1"
         image: ${MONGO_IMAGE}
+        mem_limit: 512m
         volumes: 
             - ./mongo-2-1:/data/db
         ports:

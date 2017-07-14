@@ -3,6 +3,7 @@ services:
     mongo-3-2:
         container_name: "mongo-3-2"
         image: ${MONGO_IMAGE}
+        mem_limit: 512m
         volumes: 
             - ./mongo-3-2:/data/db
         ports:
@@ -13,6 +14,7 @@ services:
     mongo-3-3:
         container_name: "mongo-3-3"
         image: ${MONGO_IMAGE}
+        mem_limit: 512m
         volumes: 
             - ./mongo-3-3:/data/db
         ports:
@@ -23,6 +25,7 @@ services:
     mongo-3-1:
         container_name: "mongo-3-1"
         image: ${MONGO_IMAGE}
+        mem_limit: 512m
         volumes: 
             - ./mongo-3-1:/data/db
         ports:
