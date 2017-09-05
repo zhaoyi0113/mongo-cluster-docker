@@ -22,15 +22,15 @@ mongo --host ${mongodb1}:${port} <<EOF
         "members": [
             {
                 "_id": 0,
-                "host": "${mongodb1}:${port}"
+                "host": "mongo-cnf-1:${port}"
             },
             {
                 "_id": 1,
-                "host": "${mongodb2}:${port}"
+                "host": "mongo-cnf-2:${port}"
             },
             {
                 "_id": 2,
-                "host": "${mongodb3}:${port}"
+                "host": "mongo-cnf-3:${port}"
             }
         ]
     };

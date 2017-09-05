@@ -23,7 +23,7 @@ services:
             - mongo-3-1:mongo-3-1
             - mongo-3-2:mongo-3-2
             - mongo-3-3:mongo-3-3
-        command: mongos --configdb cnf-serv/mongo-cnf-1:27017,mongo-cnf-2:27017,mongo-cnf-3:27017
+        command: mongos --configdb cnf-serv/mongo-cnf-1:27017,mongo-cnf-2:27017,mongo-cnf-3:27017 
         restart: always
 
     mongo-shard-setup:
